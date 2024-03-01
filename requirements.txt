@@ -6,6 +6,7 @@ streamlit==1.31.1
 streamlit-option-menu==0.3.12
 imageio==2.26.0
 opencv-python-headless
+opencv-python==4.9.0.80
 pandas==2.0.3
 tensorflow==2.15.0
 tensorflow-hub==0.16.1
