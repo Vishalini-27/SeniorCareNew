@@ -87,8 +87,8 @@ if selected == 'About us':
 
     # page title
     st.title('“Caring for Seniors: SeniorCare Enriching lives with Heart & Expertise”')
-    
-    sub = '<p style="font-family:Taviraj; color:#AA1945; font-size: 30px;"><b>Welcome to SeniorCare, where cutting-edge technology meets compassionate care for our aging population. </b></p>'
+    st.write("\n\n")
+    sub = '<p style="font-family:Taviraj; color:#AA1945; font-size: 35px;"><b>Welcome to SeniorCare, where cutting-edge technology meets compassionate care for our aging population. </b></p>'
     st.markdown(sub, unsafe_allow_html=True)
     
     st.write('\n\n')
