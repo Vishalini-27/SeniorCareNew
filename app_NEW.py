@@ -37,26 +37,6 @@ st.markdown(
 )
 
 
-side_bg = 'main4.png'
-side_bg_ext = 'png'
-main_bg = 'main4.png'
-main_bg_ext = 'png'
-
-st.markdown(
-      f"""
-      <style>
-        [data-testid="stSidebar"] > div:first-child {{
-            background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()});
-        }}
-      # .stApp {{
-      #      background-image: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()});
-      #      background-size: cover
-      #  }}
-      </style>
-      """,
-      unsafe_allow_html=True,
-      )
-
 # loading the saved models
 
 heart_disease_model = pickle.load(open('F_heart_disease_model.sav', 'rb'))
@@ -86,31 +66,50 @@ with st.sidebar:
 if selected == 'About us':
 
     # page title
-    st.title('“Caring for Seniors: SeniorCare Enriching lives with Heart & Expertise”')
+    
+    new_title = '<p style="font-family:sans-serif ; color:#122620; text-align: center; font-size: 45px;"><b><em> “Caring for Seniors: SeniorCare Enriching lives with Heart & Expertise” </em></b></p>'
+    st.markdown(new_title, unsafe_allow_html=True)
     st.write("\n\n")
-    sub = '<p style="font-family:Taviraj; color:#AA1945; font-size: 35px;"><b>Welcome to SeniorCare, where cutting-edge technology meets compassionate care for our aging population. </b></p>'
-    st.markdown(sub, unsafe_allow_html=True)
+    st.write("\n\n")    
+    col1,col2 = st.columns(2, gap = 'large')
+    with col2:     
+        image = Image.open('eld (3).png')
+        st.image(image, width=330) 
+    with col1:
+        st.write("\n\n")
+        st.write("\n\n")
+        st.write("\n\n")
+        st.write("\n\n")
+        sub = '<p style="font-family:Taviraj; color:#E1A140; text-align: center;  font-size: 33px;"><b>Welcome to SeniorCare, where cutting-edge technology meets compassionate care for our aging population. </b></p>'
+        st.markdown(sub, unsafe_allow_html=True)
+        
     
+    
+    # st.write("This is <b>bold</b> text, and this is <em>italicized</em> text.")
+    
+    # progress_text = '<span style="font-size: 24px;">:orange[Operation in progress. Please wait.]</span>'
+    # st.markdown(progress_text, unsafe_allow_html=True)
+
+    # st.markdown("This text is :red[colored red], and this is **:blue[colored]** and bold.")
     st.write('\n\n')
-    st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; font-size: 28px;"><b>Mission: “Empowering Seniors Through Predictive Health Solutions” </b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>Mission: “Empowering Seniors Through Predictive Health Solutions” </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
-    new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 25px;">Our mission is to bridge this divide by integrating predictive approaches into the daily lives of seniors, empowering them with the knowledge to proactively manage their health. Through our innovative platform, we offer early detection and monitoring for prevalent diseases such as Parkinson\'s, Stroke, Hypertension, and Arrhythmia.  </p>'
+    new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our mission is to bridge this divide by integrating predictive approaches into the daily lives of seniors, empowering them with the knowledge to proactively manage their health. Through our innovative platform, we offer early detection and monitoring for prevalent diseases such as  Arrhythmia, Stroke, Parkinson\'s Disease, Hypertension and Diabetes.  </p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; font-size: 28px;"><b>Vision: “Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>Vision: “Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
-    new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 25px;">Our vision is to redefine senior healthcare by providing accessible, user-friendly tools that enable timely intervention and improved quality of life. Join us on our journey to revolutionize elderly care, where technology and compassion converge to empower individuals and communities with proactive health management. </p>'
+    new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our vision is to redefine senior healthcare by providing accessible, user-friendly tools that enable timely intervention and improved quality of life. Join us on our journey to revolutionize elderly care, where technology and compassion converge to empower individuals and communities with proactive health management. </p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; font-size: 28px;"><b>Creators\' Credits: </b> SeniorCare owes its inception and success to the dedication and expertise of our talented team</p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 26px;"><b>Creators\' Credits: </b> SeniorCare owes its inception and success to the dedication and expertise of our talented team</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     col1, col2 = st.columns(2, gap = "large")
@@ -119,15 +118,15 @@ if selected == 'About us':
         st.image(logo, width=200)
         new_title = '<p style="font-family:Taviraj; color:#3B0404; font-size: 25px;"><b> KEERTHANA B </b> </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 22px;"> Co-founder </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 22px;"> Co-founder </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> B.Tech. ECE with Specialization in Biomedical Engineering Undergraduate Student</p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> B.Tech. ECE with Specialization in Biomedical Engineering Undergraduate Student</p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> VIT Vellore, Tamil Nadu</p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> VIT Vellore, Tamil Nadu</p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> E-mail: keerthana.balaji2020@vitstudent.ac.in   </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> E-mail: keerthana.balaji2020@vitstudent.ac.in   </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> LinkedIn: https://www.linkedin.com/in/keerthanabalaji2108/ </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> LinkedIn: https://www.linkedin.com/in/keerthanabalaji2108/ </p>'
         st.markdown(new_title, unsafe_allow_html=True)
     
     
@@ -136,22 +135,23 @@ if selected == 'About us':
         st.image(logo, width=200)
         new_title = '<p style="font-family:Taviraj; color:#3B0404; font-size: 25px;"><b> VISHALINI P </b> </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 22px;"> Co-founder </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 22px;"> Co-founder </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> B.Tech. ECE with Specialization in Biomedical Engineering Undergraduate Student </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> B.Tech. ECE with Specialization in Biomedical Engineering Undergraduate Student </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> VIT Vellore, Tamil Nadu </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> VIT Vellore, Tamil Nadu </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> E-mail: vishalini.p2020@vitstudent.ac.in   </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> E-mail: vishalini.p2020@vitstudent.ac.in   </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-        new_title = '<p style="font-family:Taviraj; color:#C8626D; font-size: 20px;"> LinkedIn: https://www.linkedin.com/in/vishalini2709/  </p>'
+        new_title = '<p style="font-family:Taviraj; color:#914110; font-size: 20px;"> LinkedIn: https://www.linkedin.com/in/vishalini2709/  </p>'
         st.markdown(new_title, unsafe_allow_html=True)
-    
+
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#2f0404; font-size: 28px;"><b>We are immensely glad in shaping SeniorCare into a platform that strives to make a meaningful impact in senior healthcare. </b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#2f0404; text-align: justify; font-size: 28px;"><b>We are immensely glad in shaping SeniorCare into a platform that strives to make a meaningful impact in senior healthcare. </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
      
+
 ###################################################################################################################
 
 # Cardiac Disease Prediction Page
@@ -161,6 +161,16 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
     st.title('Cardiovascular Disease Prediction')
     st.subheader('Accuracy : 78%')
     
+
+    
+    ########################################
+    ## 2 COLUMN SETUP 
+    
+    # st.text_area("Write some text")
+    # st.text_input("Write some text")
+    # st.number_input("Write some number")
+
+
     col1, col2 = st.columns(2)
     
 
@@ -171,13 +181,7 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
         # p = float(0)
         # q = float(1)
         sex = st.text_input('Gender (0: Female, 1: Male)')
-        # if(sex==p or sex==q):
-        #     sex=sex
-        # else:
-        #     st.error("Please enter only 0 or 1 !!")
-    
-           #st.markdown(f'<p style="background-color:#f63366;color:#f0f2f6;font-size:12px;border-radius:2%;">{"Please enter in 0 or 1 format !!"}</p>', unsafe_allow_html=True)
-
+      
     with col1:
         trestbps = st.text_input('Resting Systolic Blood Pressure' )
         
@@ -234,7 +238,7 @@ if selected == 'Parkinson\'s Disease Prediction':
     image = Image.open('eg1.png')
     st.image(image, caption='Example images') 
     
-    #Browser upload of image
+  #Browser upload of image
     file = st.file_uploader("Upload your hand-drawn waveform image here: ", type=["png","jpg"])
     show_file = st.empty()
     if file:
@@ -400,5 +404,5 @@ if selected == 'Diabetes Prediction':
 
     st.success(diabetes_diagnosis)
 
-########################################################################################################################################
-#THE END
+############################################
+#END
