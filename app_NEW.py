@@ -79,12 +79,8 @@ if selected == 'About us':
         st.write("\n\n")
         st.write("\n\n")
         st.write("\n\n")
-        sub = '<p style="font-family:Taviraj; color:#E1A140; text-align: center;  font-size: 35px;"><b>Welcome to SeniorCare, </b></p>'
-        st.markdown(sub, unsafe_allow_html=True)
-        sub = '<p style="font-family:Taviraj; color:#E1A140; text-align: center;  font-size: 33px;"><b>where cutting-edge technology meets compassionate care for our aging population. </b></p>'
-        st.markdown(sub, unsafe_allow_html=True)
-        
-    
+        sub = '<p style="font-family:Taviraj; color:#E1A140; text-align: center;  font-size: 36px;"><b>Welcome to SeniorCare, <br> where cutting-edge technology meets compassionate care for our aging population. </b></p>'
+        st.markdown(sub, unsafe_allow_html=True)    
     
     # st.write("This is <b>bold</b> text, and this is <em>italicized</em> text.")
     
@@ -95,9 +91,9 @@ if selected == 'About us':
     st.write('\n\n')
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;  text-decoration: underline;"><b>Mission </b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 45px; "><b>Mission </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b>“Empowering Seniors Through Predictive Health Solutions” </b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b><em>“Empowering Seniors Through Predictive Health Solutions” </em></b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our mission is to bridge this divide by integrating predictive approaches into the daily lives of seniors, empowering them with the knowledge to proactively manage their health. Through our innovative platform, we offer early detection and monitoring for prevalent diseases such as  Arrhythmia, Stroke, Parkinson\'s Disease, Hypertension and Diabetes.  </p>'
@@ -105,15 +101,19 @@ if selected == 'About us':
     
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;"><b>Vision </b></p>'
+    st.write('\n\n')
+    st.write('\n\n')
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 45px;"><b>Vision </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b>“Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b><em>“Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</em></b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our vision is to redefine senior healthcare by providing accessible, user-friendly tools that enable timely intervention and improved quality of life. Join us on our journey to revolutionize elderly care, where technology and compassion converge to empower individuals and communities with proactive health management. </p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     
+    st.write('\n\n')
+    st.write('\n\n')
     st.write('\n\n')
     st.write('\n\n')
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;"><b>Creators\' Credits </b></p>'
@@ -369,7 +369,7 @@ if selected == 'Diabetes Prediction':
         sudden_weight_loss = st.text_input('Did you experience any sudden weightloss recently? \n\n(0: No, 1: Yes)')
 
     with col1:
-        Polyphagia = st.text_input('(Condition - Polyphagia) Do you have an increased appetite or extreme hunger recently ? \n\n(0: No, 1: Yes)')
+        Polyphagia = st.text_input('(Condition - Polyphagia) Do you have an increased appetite / extreme hunger recently ? \n\n(0: No, 1: Yes)')
 
     with col2:
         visual_blurring = st.text_input('Do you experience visual blurring ? \n\n(0: No, 1: Yes)')
@@ -381,7 +381,7 @@ if selected == 'Diabetes Prediction':
         delayed_healing = st.text_input('Do you experience delayed healing of injuries ? \n\n(0: No, 1: Yes)')
 
     with col1:
-        partial_paresis = st.text_input('(Condition - Partial paresis) Do you find any muscle weakness or  difficulty to move voluntarily ? \n\n(0: No, 1: Yes)')
+        partial_paresis = st.text_input('(Condition - Partial paresis) Do you find any muscle weakness or difficulty to move voluntarily ? \n\n(0: No, 1: Yes)')
 
     with col2:
         muscle_stiffness = st.text_input('Do you experience muscle stiffness ? \n\n(0: No, 1: Yes)')
