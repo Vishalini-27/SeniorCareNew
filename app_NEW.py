@@ -97,7 +97,7 @@ if selected == 'About us':
     st.write('\n\n')
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;"><b>Mission </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>“Empowering Seniors Through Predictive Health Solutions” </b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b>“Empowering Seniors Through Predictive Health Solutions” </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our mission is to bridge this divide by integrating predictive approaches into the daily lives of seniors, empowering them with the knowledge to proactively manage their health. Through our innovative platform, we offer early detection and monitoring for prevalent diseases such as  Arrhythmia, Stroke, Parkinson\'s Disease, Hypertension and Diabetes.  </p>'
@@ -107,7 +107,7 @@ if selected == 'About us':
     st.write('\n\n')
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;"><b>Vision </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>“Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b>“Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our vision is to redefine senior healthcare by providing accessible, user-friendly tools that enable timely intervention and improved quality of life. Join us on our journey to revolutionize elderly care, where technology and compassion converge to empower individuals and communities with proactive health management. </p>'
@@ -118,7 +118,7 @@ if selected == 'About us':
     st.write('\n\n')
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;"><b>Creators\' Credits </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 26px;">SeniorCare owes its inception and success to the dedication and expertise of our talented team</p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 26px;">SeniorCare owes its inception and success to the dedication and expertise of our talented team</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     col1, col2 = st.columns(2, gap = "large")
