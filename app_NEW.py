@@ -80,7 +80,9 @@ if selected == 'About us':
         st.write("\n\n")
         st.write("\n\n")
         st.write("\n\n")
-        sub = '<p style="font-family:Taviraj; color:#E1A140; text-align: center;  font-size: 33px;"><b>Welcome to SeniorCare, where cutting-edge technology meets compassionate care for our aging population. </b></p>'
+        sub = '<p style="font-family:Taviraj; color:#E1A140; text-align: center;  font-size: 33px;"><b>Welcome to SeniorCare, </b></p>'
+        st.markdown(sub, unsafe_allow_html=True)
+        sub = '<p style="font-family:Taviraj; color:#E1A140; text-align: center;  font-size: 33px;"><b>where cutting-edge technology meets compassionate care for our aging population. </b></p>'
         st.markdown(sub, unsafe_allow_html=True)
         
     
@@ -92,7 +94,9 @@ if selected == 'About us':
 
     # st.markdown("This text is :red[colored red], and this is **:blue[colored]** and bold.")
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>Mission: “Empowering Seniors Through Predictive Health Solutions” </b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 40px;"><b>Mission </b></p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>“Empowering Seniors Through Predictive Health Solutions” </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our mission is to bridge this divide by integrating predictive approaches into the daily lives of seniors, empowering them with the knowledge to proactively manage their health. Through our innovative platform, we offer early detection and monitoring for prevalent diseases such as  Arrhythmia, Stroke, Parkinson\'s Disease, Hypertension and Diabetes.  </p>'
@@ -100,7 +104,9 @@ if selected == 'About us':
     
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>Vision: “Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 40px;"><b>Vision </b></p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 28px;"><b>“Transforming Senior Healthcare: Where Technology Meets Compassion for a Healthier Tomorrow”</b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our vision is to redefine senior healthcare by providing accessible, user-friendly tools that enable timely intervention and improved quality of life. Join us on our journey to revolutionize elderly care, where technology and compassion converge to empower individuals and communities with proactive health management. </p>'
@@ -109,7 +115,9 @@ if selected == 'About us':
     
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 26px;"><b>Creators\' Credits: </b> SeniorCare owes its inception and success to the dedication and expertise of our talented team</p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 40px;"><b>Creators\' Credits </b></p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 26px;">SeniorCare owes its inception and success to the dedication and expertise of our talented team</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     col1, col2 = st.columns(2, gap = "large")
@@ -360,7 +368,7 @@ if selected == 'Diabetes Prediction':
         sudden_weight_loss = st.text_input('Did you experience any sudden weightloss recently? \n\n(0: No, 1: Yes)')
 
     with col1:
-        Polyphagia = st.text_input('(Condition - Polyphagia) Do you have an increased apatite or extreme hunger recently ? \n\n(0: No, 1: Yes)')
+        Polyphagia = st.text_input('(Condition - Polyphagia) Do you have an increased appetite or extreme hunger recently ? \n\n(0: No, 1: Yes)')
 
     with col2:
         visual_blurring = st.text_input('Do you experience visual blurring ? \n\n(0: No, 1: Yes)')
