@@ -67,7 +67,7 @@ if selected == 'About us':
 
     # page title
     
-    new_title = '<p style="font-family:sans-serif ; color:#122620; text-align: center; font-size: 45px;"><b><em> “Caring for Seniors: SeniorCare Enriching lives with Heart & Expertise” </em></b></p>'
+    new_title = '<p style="font-family:sans-serif ; color:#122620; text-align: center; font-size: 45px;"><b> “Caring for Seniors: SeniorCare Enriching lives with Heart & Expertise” </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     st.write("\n\n")
     st.write("\n\n")    
