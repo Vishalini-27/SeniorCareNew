@@ -95,7 +95,7 @@ if selected == 'About us':
     st.write('\n\n')
     st.write('\n\n')
     st.write('\n\n')
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;"><b>Mission </b></p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;  text-decoration: underline;"><b>Mission </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b>“Empowering Seniors Through Predictive Health Solutions” </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
@@ -118,7 +118,7 @@ if selected == 'About us':
     st.write('\n\n')
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 40px;"><b>Creators\' Credits </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
-    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 26px;">SeniorCare owes its inception and success to the dedication and expertise of our talented team</p>'
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: justify; font-size: 26px;">SeniorCare owes its inception and success to the dedication and expertise of our talented team -</p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     col1, col2 = st.columns(2, gap = "large")
