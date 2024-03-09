@@ -225,9 +225,9 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
         heart_prediction = heart_disease_model.predict([user_input])
 
         if heart_prediction[0] == 1:
-            heart_diagnosis = 'You are LIKELY to have a Cardiovascular Disease'
+            heart_diagnosis = 'You are SUSPECTED to have a Cardiovascular Disease'
         else:
-            heart_diagnosis = 'You are NOT LIKELY to have any Cardiovascular Disease'
+            heart_diagnosis = 'You are NOT SUSPECTED to have any Cardiovascular Disease'
 
     st.success(heart_diagnosis)
 
@@ -275,10 +275,10 @@ if selected == 'Parkinson\'s Disease Prediction':
         input_pred_label = np.argmax(park_prediction)
 
         if input_pred_label == 0:
-            park_diagnosis = 'You are LIKELY to have Parkinson\'s Disease'
+            park_diagnosis = 'You are SUSPECTED to have Parkinson\'s Disease'
        
         else:
-            park_diagnosis = 'You are NOT LIKELY to have Parkinson\'s Disease'
+            park_diagnosis = 'You are NOT SUSPECTED to have Parkinson\'s Disease'
     
     st.success(park_diagnosis)
     
@@ -337,9 +337,9 @@ if selected == 'Hypertension Prediction':
         hyper_prediction = hypertension_model.predict([user_input])
 
         if hyper_prediction[0] == 1:
-            hyper_diagnosis = 'You are LIKELY to have Hypertension' 
+            hyper_diagnosis = 'You are SUSPECTED to have Hypertension' 
         else:
-            hyper_diagnosis = 'You are NOT LIKELY to have Hypertension'
+            hyper_diagnosis = 'You are NOT SUSPECTED to have Hypertension'
 
     st.success(hyper_diagnosis)
     
@@ -407,9 +407,9 @@ if selected == 'Diabetes Prediction':
         diabetes_prediction = diabetes_model.predict([user_input])
 
         if diabetes_prediction[0] == 1:
-            diabetes_diagnosis = 'You are LIKELY to have Diabetes' 
+            diabetes_diagnosis = 'You are SUSPECTED to have Diabetes' 
         else:
-            diabetes_diagnosis = 'You are NOT LIKELY to have Diabetes'
+            diabetes_diagnosis = 'You are NOT SUSPECTED to have Diabetes'
 
     st.success(diabetes_diagnosis)
 
