@@ -236,7 +236,7 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
 if selected == 'Parkinson\'s Disease Prediction':
     # page title
     st.title('Parkinson\'s Disease Prediction')
-    st.subheader('Accuracy : 71%')
+    st.subheader('Accuracy : 82%')
     st.subheader('Steps : \n\n 1. Draw a waveform OR a spiral on a plain piece of paper as shown below and store as .png/.jpg image on your desktop. \n\n2. Upload the saved file below and get your results. \n\n')
 
   # Example image
