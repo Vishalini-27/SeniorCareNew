@@ -163,6 +163,7 @@ if selected == 'About us':
 
 ###################################################################################################################
 
+
 # Cardiac Disease Prediction Page
 if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
 
@@ -189,19 +190,19 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
     with col2:
         # p = float(0)
         # q = float(1)
-        sex = st.text_input('Gender (0: Female, 1: Male)')
+        sex = st.text_input('Gender (0: Female / 1: Male)')
       
     with col1:
         trestbps = st.text_input('Resting Systolic Blood Pressure' )
         
     with col2:
-        restecg = st.text_input('Resting Electrocardiographic results \n\n\n(0: Normal, 1: having ST-T wave abnormality, 2: showing probable or definite left ventricular hypertrophy)')
+        restecg = st.text_input('Resting Electrocardiographic results \n\n\n(0: Normal / 1: having ST-T wave abnormality / 2: showing probable or definite left ventricular hypertrophy)')
 
     with col1:
         thalach = st.text_input('Maximum Heart Rate (Numeric value between 60 and 202)')
 
     with col2:
-        exang = st.text_input('Exercise Induced Angina chest pain (0 for NO / 1 for YES)')
+        exang = st.text_input('Exercise Induced Angina chest pain (0: NO / 1: YES)')
 
     with col1:
         oldpeak = st.text_input('ST depression induced by exercise')
@@ -223,11 +224,16 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
         user_input = [float(x) for x in user_input]
 
         heart_prediction = heart_disease_model.predict([user_input])
+        # Prediction and confidence scores
+        
+        confidence_scores = heart_disease_model.predict_proba([user_input])
+        confidence_scores = "{:.2f}%".format(np.max(confidence_scores)*100)
+        confidence_scores = str(confidence_scores)
 
         if heart_prediction[0] == 1:
-            heart_diagnosis = 'You are SUSPECTED to have a Cardiovascular Disease'
+            heart_diagnosis = 'You are SUSPECTED to have a Cardiovascular Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
         else:
-            heart_diagnosis = 'You are NOT SUSPECTED to have any Cardiovascular Disease'
+            heart_diagnosis = 'You are NOT SUSPECTED to have any Cardiovascular Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
 
     st.success(heart_diagnosis)
 
@@ -236,7 +242,7 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
 if selected == 'Parkinson\'s Disease Prediction':
     # page title
     st.title('Parkinson\'s Disease Prediction')
-    st.subheader('Accuracy : 82%')
+    st.subheader('Accuracy : 73%')
     st.subheader('Steps : \n\n 1. Draw a waveform OR a spiral on a plain piece of paper as shown below and store as .png/.jpg image on your desktop. \n\n2. Upload the saved file below and get your results. \n\n')
 
   # Example image
@@ -273,12 +279,17 @@ if selected == 'Parkinson\'s Disease Prediction':
         park_prediction = parkinson_model.predict(image_reshaped)
 
         input_pred_label = np.argmax(park_prediction)
+        
+        confidence_scores = tf.nn.softmax(park_prediction[0])
+        confidence_scores = "{:.2f}%".format(np.max(confidence_scores)*100)
+        confidence_scores = str(confidence_scores)
+
 
         if input_pred_label == 0:
-            park_diagnosis = 'You are SUSPECTED to have Parkinson\'s Disease'
+            park_diagnosis = 'You are SUSPECTED to have Parkinson\'s Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
        
         else:
-            park_diagnosis = 'You are NOT SUSPECTED to have Parkinson\'s Disease'
+            park_diagnosis = 'You are NOT SUSPECTED to have Parkinson\'s Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
     
     st.success(park_diagnosis)
     
@@ -299,7 +310,7 @@ if selected == 'Hypertension Prediction':
         age = st.text_input('Age')
 
     with col2:
-        gender = st.text_input('Gender (1: Female, 2: Male)')
+        gender = st.text_input('Gender (1: Female / 2: Male)')
 
     with col1:
         height = st.text_input('Height in cm' )
@@ -314,13 +325,13 @@ if selected == 'Hypertension Prediction':
         ap_lo = st.text_input('Diastolic Blood Pressure')
 
     with col1:
-        smoke = st.text_input('Do you smoke ? (0: No, 1: Yes)')
+        smoke = st.text_input('Do you smoke ? (0: No / 1: Yes)')
 
     with col2:
-        alco = st.text_input('Do you drink alcohol ? (0: No, 1: Yes)')
+        alco = st.text_input('Do you drink alcohol ? (0: No / 1: Yes)')
 
     with col1:
-        active = st.text_input('Are you an active person who does exercise regularly ? (0: No, 1: Yes)')
+        active = st.text_input('Are you an active person who does exercise regularly ? (0: No / 1: Yes)')
     
    
     # code for Prediction
@@ -336,10 +347,16 @@ if selected == 'Hypertension Prediction':
 
         hyper_prediction = hypertension_model.predict([user_input])
 
+        # Prediction and confidence scores
+        
+        confidence_scores = hypertension_model.predict_proba([user_input])
+        confidence_scores = "{:.2f}%".format(np.max(confidence_scores)*100)
+        confidence_scores = str(confidence_scores)
+
         if hyper_prediction[0] == 1:
-            hyper_diagnosis = 'You are SUSPECTED to have Hypertension' 
+            hyper_diagnosis = 'You are SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
         else:
-            hyper_diagnosis = 'You are NOT SUSPECTED to have Hypertension'
+            hyper_diagnosis = 'You are NOT SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
 
     st.success(hyper_diagnosis)
     
@@ -360,37 +377,37 @@ if selected == 'Diabetes Prediction':
         Age = st.text_input('Age')
 
     with col2:
-        Gender = st.text_input('Gender (0: Female, 1: Male)')
+        Gender = st.text_input('Gender (0: Female / 1: Male)')
         
     with col1:
-        Polydipsia = st.text_input('(Condition - Polydipsia) Do you feel thirsty for prolonged period of time despite drinking adequate amount of water everyday ? \n\n(0: No, 1: Yes)' )
+        Polydipsia = st.text_input('(Condition - Polydipsia) Do you feel thirsty for prolonged period of time despite drinking adequate amount of water everyday ? \n\n(0: No / 1: Yes)' )
     
     with col2:
-        sudden_weight_loss = st.text_input('Did you experience any sudden weightloss recently? \n\n(0: No, 1: Yes)')
+        sudden_weight_loss = st.text_input('Did you experience any sudden weightloss recently? \n\n(0: No / 1: Yes)')
 
     with col1:
-        Polyphagia = st.text_input('(Condition - Polyphagia) Do you have an increased appetite / extreme hunger recently ? \n\n(0: No, 1: Yes)')
+        Polyphagia = st.text_input('(Condition - Polyphagia) Do you have an increased appetite / extreme hunger recently ? \n\n(0: No / 1: Yes)')
 
     with col2:
-        visual_blurring = st.text_input('Do you experience visual blurring ? \n\n(0: No, 1: Yes)')
+        visual_blurring = st.text_input('Do you experience visual blurring ? \n\n(0: No / 1: Yes)')
 
     with col1:
-        Itching = st.text_input('Do you have itching sensation ? \n\n(0: No, 1: Yes)')
+        Itching = st.text_input('Do you have itching sensation ? \n\n(0: No / 1: Yes)')
         
     with col2:
-        delayed_healing = st.text_input('Do you experience delayed healing of injuries ? \n\n(0: No, 1: Yes)')
+        delayed_healing = st.text_input('Do you experience delayed healing of injuries ? \n\n(0: No / 1: Yes)')
 
     with col1:
-        partial_paresis = st.text_input('(Condition - Partial paresis) Do you find any muscle weakness or difficulty to move voluntarily ? \n\n(0: No, 1: Yes)')
+        partial_paresis = st.text_input('(Condition - Partial paresis) Do you find any muscle weakness or difficulty to move voluntarily ? \n\n(0: No / 1: Yes)')
 
     with col2:
-        muscle_stiffness = st.text_input('Do you experience muscle stiffness ? \n\n(0: No, 1: Yes)')
+        muscle_stiffness = st.text_input('Do you experience muscle stiffness ? \n\n(0: No / 1: Yes)')
 
     with col1:
-        Alopecia = st.text_input('(Condition - Alopecia) Do you experience extreme hair loss on the scalp or the entire body lately ? \n\n(0: No, 1: Yes)')
+        Alopecia = st.text_input('(Condition - Alopecia) Do you experience extreme hair loss on the scalp or the entire body lately ? \n\n(0: No / 1: Yes)')
 
     with col2:
-        Obesity = st.text_input('Do you have obesity ? \n\n(0: No, 1: Yes)')
+        Obesity = st.text_input('Do you have obesity ? \n\n(0: No / 1: Yes)')
     
    
     # code for Prediction
@@ -405,11 +422,17 @@ if selected == 'Diabetes Prediction':
         user_input = [float(x) for x in user_input]
 
         diabetes_prediction = diabetes_model.predict([user_input])
+        
+        # Prediction and confidence scores
+        
+        confidence_scores = diabetes_model.predict_proba([user_input])
+        confidence_scores = "{:.2f}%".format(np.max(confidence_scores)*100)
+        confidence_scores = str(confidence_scores)
 
         if diabetes_prediction[0] == 1:
-            diabetes_diagnosis = 'You are SUSPECTED to have Diabetes' 
+            diabetes_diagnosis = 'You are SUSPECTED to have Diabetes Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
         else:
-            diabetes_diagnosis = 'You are NOT SUSPECTED to have Diabetes'
+            diabetes_diagnosis = 'You are NOT SUSPECTED to have Diabetes Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
 
     st.success(diabetes_diagnosis)
 
