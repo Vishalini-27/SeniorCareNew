@@ -41,7 +41,7 @@ st.markdown(
 
 heart_disease_model = pickle.load(open('F_heart_disease_model.sav', 'rb'))
 
-hypertension_model = pickle.load(open('hypertension_model.sav', 'rb'))
+asthma_model = pickle.load(open('F_ASTHMA_disease_model.sav', 'rb'))
 
 parkinson_model = tf.keras.models.load_model(('my_parkinson_model.h5'), custom_objects={'KerasLayer':hub.KerasLayer})
 
@@ -55,10 +55,10 @@ with st.sidebar:
     selected = option_menu('Predictive Health Analytics using Machine Learning for Senior Citizens',
 
                            ['About us','Cardiovascular Disease Prediction (Arrhythmia & Stroke)',
-                            'Parkinson\'s Disease Prediction', 'Hypertension Prediction', 
+                            'Parkinson\'s Disease Prediction', 'Asthma Disease Prediction', 
                             'Diabetes Prediction'],
                            menu_icon= 'clipboard-pulse',
-                           icons=['bookmark','activity', 'person-walking', 'moisture', 'capsule'],
+                           icons=['bookmark','activity', 'person-walking', 'lungs-fill', 'capsule'],
                            default_index=0)
 
 
@@ -294,71 +294,72 @@ if selected == 'Parkinson\'s Disease Prediction':
     st.success(park_diagnosis)
     
 ######################################################################################
-# Hypertension Disease Prediction Page
-if selected == 'Hypertension Prediction':
+# Asthma Disease Prediction Page
+if selected == 'Asthma Disease Prediction':
 
     # page title
-    st.title('Hypertension Prediction')
-
-    st.subheader('Accuracy : 70%')
-    
+    st.title('Asthma Disease Prediction')
+    st.subheader('Accuracy : 51%') 
     
     col1, col2 = st.columns(2)
     
 
     with col1:
-        age = st.text_input('Age')
+        Gender = st.text_input('Gender (0: Female / 1: Male)')
 
     with col2:
-        gender = st.text_input('Gender (1: Female / 2: Male)')
+        Tiredness = st.text_input('Do you get tired very often ? (0: No / 1: Yes)')
 
     with col1:
-        height = st.text_input('Height in cm' )
+        Dry_Cough = st.text_input('Do you have dry cough ? (0: No / 1: Yes)' )
         
     with col2:
-        weight = st.text_input('Weight in Kg' )
+        Difficulty_in_Breathing = st.text_input('Do you experience difficulty in breathing ?  (0: No / 1: Yes)' )
     
     with col1:
-        ap_hi = st.text_input('Systolic Blood Pressure')
+        Sore_Throat = st.text_input('Do you have a sore throat ?  (0: No / 1: Yes)')
 
     with col2:
-        ap_lo = st.text_input('Diastolic Blood Pressure')
+        Pains = st.text_input('Do you experience throat or chest pains very often ?  (0: No / 1: Yes)')
 
     with col1:
-        smoke = st.text_input('Do you smoke ? (0: No / 1: Yes)')
+        Nasal_Congestion = st.text_input('Do you have nasal congestion ? (0: No / 1: Yes)')
 
     with col2:
-        alco = st.text_input('Do you drink alcohol ? (0: No / 1: Yes)')
+        Runny_Nose = st.text_input('Do you often get runny nose ? (0: No / 1: Yes)')
 
     with col1:
-        active = st.text_input('Are you an active person who does exercise regularly ? (0: No / 1: Yes)')
-    
+        Age_25_59 = st.text_input('Are you aged between 25 and 59 years old ? (0: No / 1: Yes)')
+
+    with col2:
+        Age_60 = st.text_input('Are you 60 or above years old ? (0: No / 1: Yes)')
+        
    
     # code for Prediction
-    hyper_diagnosis = ''
+    asthma_diagnosis = ''
 
     # creating a button for Prediction
 
-    if st.button('Hypertension Test Result'):
+    if st.button('Asthma Test Result'):
 
-        user_input = [age, gender, height, weight, ap_hi, ap_lo, smoke, alco, active]
+        user_input = [Gender, Tiredness, Dry_Cough, Difficulty_in_Breathing, Sore_Throat, Pains, Nasal_Congestion, Runny_Nose, Age_25_59, Age_60]
 
         user_input = [float(x) for x in user_input]
 
-        hyper_prediction = hypertension_model.predict([user_input])
+        asthma_prediction = asthma_model.predict([user_input])
 
         # Prediction and confidence scores
         
-        confidence_scores = hypertension_model.predict_proba([user_input])
+        confidence_scores = asthma_model.predict_proba([user_input])
         confidence_scores = "{:.2f}%".format(np.max(confidence_scores)*100)
         confidence_scores = str(confidence_scores)
 
-        if hyper_prediction[0] == 1:
-            hyper_diagnosis = 'You are SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
+        if asthma_prediction[0] == 0:
+            asthma_diagnosis = 'You are SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
         else:
-            hyper_diagnosis = 'You are NOT SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
+            asthma_diagnosis = 'You are NOT SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
 
-    st.success(hyper_diagnosis)
+    st.success(asthma_diagnosis)
     
 ######################################################################################
 # Diabetes Disease Prediction Page
