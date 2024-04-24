@@ -256,7 +256,7 @@ if selected == 'Parkinson\'s Disease Prediction':
     # page title
     st.title('Parkinson\'s Disease Prediction')
     st.subheader('Accuracy : 73%')
-    st.subheader('Steps : \n\n 1. Draw a waveform OR a spiral on a plain piece of paper as shown below and store as .png/.jpg image on your desktop. \n\n2. Upload the saved file below and get your results. \n\n')
+    st.subheader('Steps : \n\n 1. Draw a waveform OR a spiral on a plain piece of paper as shown below and store as .png/.jpg image on your desktop. \n\n2. Upload the saved file below and get your results. \n\nNOTE:  We suggest you to place the paper on your system screen and trace out the waveform/spiral image for better accuracy \n\n')
 
   # Example image
     # col1, col2 = st.columns(2)
