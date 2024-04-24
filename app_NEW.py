@@ -207,20 +207,17 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
         # p = float(0)
         # q = float(1)
         sex = st.text_input('Gender (0: Female / 1: Male)')
-      
+           
     with col1:
-        trestbps = st.text_input('Resting Systolic Blood Pressure' )
-        
-    with col2:
         restecg = st.text_input('Resting Electrocardiographic results \n\n\n(0: Normal / 1: having ST-T wave abnormality / 2: showing probable or definite left ventricular hypertrophy)')
 
-    with col1:
+    with col2:
         thalach = st.text_input('Maximum Heart Rate (Numeric value between 60 and 202)')
 
-    with col2:
+    with col1:
         exang = st.text_input('Exercise Induced Angina chest pain (0: NO / 1: YES)')
 
-    with col1:
+    with col2:
         oldpeak = st.text_input('ST depression induced by exercise')
 
     
@@ -235,7 +232,7 @@ if selected == 'Cardiovascular Disease Prediction (Arrhythmia & Stroke)':
         st.markdown(
                    '<style> .streamlit-button.primary-button{visibility: hidden;} .streamlit-button.primary-button:after{content: "Clicked"; visibility: visible; position:relative;-webkit-tap-highlight-color: rgba(38,39,48,0);box-sizing: border-box;font-family: inherit;font-size: inherit;overflow: visible;text-transform: none;display: inline-flex;align-items: center;justify-content: center;font-weight: 400;border-radius: .25rem;margin: 0;line-height: 1.6;color: #262730;cursor: pointer;padding: .25rem .75rem;background-color: #fff;border: 1px solid #e6eaf1; left: 0;}</style>', unsafe_allow_html=True)
 
-        user_input = [age, sex, trestbps, restecg, thalach, exang, oldpeak]
+        user_input = [age, sex, restecg, thalach, exang, oldpeak]
 
         user_input = [float(x) for x in user_input]
 
