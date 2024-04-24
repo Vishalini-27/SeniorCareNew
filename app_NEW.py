@@ -91,6 +91,22 @@ if selected == 'About us':
     st.write('\n\n')
     st.write('\n\n')
     st.write('\n\n')
+    st.write('\n\n')
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 42px; "><b>Empowering Health: What Sets Us Apart ?</b></p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b><em>“Providing simpler solutions to complex health issues, specifically designed to aid the elderly” </em></b></p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    
+    new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our platform offers comprehensive assessments for a range of prevalent conditions including cardiovascular disease, diabetes, hypertension, and Parkinson\'s disease. Using advanced algorithms and medical expertise, our intuitive interface guides users through a personalized evaluation process, providing insightful results in moments. Whether you\'re seeking peace of mind or proactive health management, our goal is to empower you with reliable information and support. </p>'
+    st.markdown(new_title, unsafe_allow_html=True)
+    
+    new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Join us in taking proactive steps towards better health. Click on your left-side tabs and get started with your free diagnosis today. </p>'
+
+    st.markdown(new_title, unsafe_allow_html=True)
+        
+    st.write('\n\n')
+    st.write('\n\n')
+    st.write('\n\n')
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 45px; "><b>Mission </b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b><em>“Empowering Seniors Through Predictive Health Solutions” </em></b></p>'
