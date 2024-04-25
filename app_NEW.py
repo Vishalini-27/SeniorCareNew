@@ -368,9 +368,9 @@ if selected == 'Asthma Disease Prediction':
         confidence_scores = str(confidence_scores)
 
         if asthma_prediction[0] == 0:
-            asthma_diagnosis = 'You are SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
+            asthma_diagnosis = 'You are SUSPECTED to have Asthma Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
         else:
-            asthma_diagnosis = 'You are NOT SUSPECTED to have Hypertension Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
+            asthma_diagnosis = 'You are NOT SUSPECTED to have Asthma Disease \n\n CONFIDENCE SCORE : ' + confidence_scores
 
     st.success(asthma_diagnosis)
     
