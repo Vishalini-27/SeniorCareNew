@@ -112,7 +112,7 @@ if selected == 'About us':
     new_title = '<p style="font-family:Taviraj; color:#3B0404; text-align: center; font-size: 28px;"><b><em>“Empowering Seniors Through Predictive Health Solutions” </em></b></p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
-    new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our mission is to bridge this divide by integrating predictive approaches into the daily lives of seniors, empowering them with the knowledge to proactively manage their health. Through our innovative platform, we offer early detection and monitoring for prevalent diseases such as  Arrhythmia, Stroke, Parkinson\'s Disease, Hypertension and Diabetes.  </p>'
+    new_title = '<p style="font-family:Taviraj; color:#914110; text-align: justify; font-size: 25px;">Our mission is to bridge this divide by integrating predictive approaches into the daily lives of seniors, empowering them with the knowledge to proactively manage their health. Through our innovative platform, we offer early detection and monitoring for prevalent diseases such as  Arrhythmia, Stroke, Parkinson\'s Disease, Asthma and Diabetes.  </p>'
     st.markdown(new_title, unsafe_allow_html=True)
     
     st.write('\n\n')
